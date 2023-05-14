@@ -44,8 +44,8 @@ char keys[numRows][numCols] = {
   {'1','2','3','A'}
 };
 
-int rowPins[] = {6,7,8,9};
-int colPins[] = {10,11,12,13};
+int rowPins[] = {6,7,8,9}; // 1~4번째 핀
+int colPins[] = {10,11,12,13}; // 5~8번째 핀
 
 void setup() {
   // 아두이노 LED 설정
