@@ -147,7 +147,7 @@ void drawEditTimePage(LiquidCrystal_I2C lcd, int* Times, int cursorX) {
   // 시간을 출력
   lcd.clear();
   lcd.setCursor(leftX+1, 0);
-  lcd.print(showTimes[0]);
+  lcd.print(editTimes[0]);
   lcd.setCursor(leftX+2, 1);
   // 현재 설정된 시간을 출력
   if (Times[0] < 10) { lcd.print("0"); }
@@ -157,7 +157,7 @@ void drawEditTimePage(LiquidCrystal_I2C lcd, int* Times, int cursorX) {
 
   // 분을 출력
   lcd.setCursor(rightX+1, 0);
-  lcd.print(showTimes[1]);
+  lcd.print(editTimes[1]);
   lcd.setCursor(rightX+2, 1);
   if (Times[1] < 10) { lcd.print("0"); }
   s = String(Times[1]);
@@ -245,6 +245,7 @@ void editTime(int moveX, int yValue, int cursorX, int* timeArr) {
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
   Serial.begin(57600);
   Rtc.Begin();
   RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
